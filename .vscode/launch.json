@@ -2,10 +2,17 @@
     "configurations": [
       {
         "type": "java",
+        "name": "IpracApplication",
+        "request": "launch",
+        "mainClass": "IpracApplication",
+        "projectName": "serverside"
+      },
+      {
+        "type": "java",
         "name": "Spring Boot Application",
         "request": "launch",
-        "mainClass": "com.example.demo.DemoApplication",
-        "projectName": "demo"
+        "mainClass": "com.summperproject.iprac.IpracApplication",
+        "projectName": "iprac"
       }
     ]
   }
