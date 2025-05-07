@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-IpracApplication<iprac>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.summperproject.iprac.IpracApplication",
+            "projectName": "iprac",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
