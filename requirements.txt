@@ -1,0 +1,39 @@
+1. API Layer (Spring Boot Controllers)
+  - SubmissionController
+    - Endpoints for submitting solutions and retrieving submission history.
+  - ExerciseController
+    - Endpoints for fetching exercise content.
+  - AuthController
+    - Login, logout, token refresh, user validation.
+  - TopicController / LanguageController
+    - Endpoints for listing topics of programming languages (e.g., “Java”, “Python”).
+  - UserProgressController
+    - Tracks and returns per-user progress metrics.
+
+2. Business Logic Layer (Spring Services)
+  - SubmissionService / ExerciseService / TopicService / LanguageService / AuthenticationService / UserProgressService
+    - Each service encapsulates domain logic:
+     - Validating submissions
+     - Fetching and formatting exercises
+     - Managing user roles & tokens
+     - Computing progress statistics
+  - Gemini API Service
+    - Wraps calls to Google Cloud's Gemini AI (e.g., for auto-feedback, hints).
+
+3. Data Access Layer (Spring Repositories + SQL Database)
+  - Spring Data Repositories:
+    - SubmissionRepository → submission_history table
+    - ExerciseRepository → exercise_content table
+    - UserRepository → user_data table
+    - TopicRepository → topics table
+    - LanguageRepository → languages table
+    - UserProgressRepository → progress_tracking table
+  - SQL Database:
+    - Stores all persistent entities: users, exercises, submissions, topics, languages, progress metrics.
+
+Each layer/module communicates only with the adjacent layer:
+  - Controllers → Services → Repositories
+  - Exceptions:
+    - Client → Controllers (HTTPS/REST)
+    - Services → External Gemini API (HTTPS/REST)
+    - Repositories → SQL DB (JDBC)
